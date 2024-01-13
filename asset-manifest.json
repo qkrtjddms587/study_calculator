@@ -1,10 +1,10 @@
 {
   "files": {
-    "main.js": "/study_calculator/static/js/main.e99900c0.js",
+    "main.js": "/study_calculator/static/js/main.176757f5.js",
     "index.html": "/study_calculator/index.html",
-    "main.e99900c0.js.map": "/study_calculator/static/js/main.e99900c0.js.map"
+    "main.176757f5.js.map": "/study_calculator/static/js/main.176757f5.js.map"
   },
   "entrypoints": [
-    "static/js/main.e99900c0.js"
+    "static/js/main.176757f5.js"
   ]
 }
