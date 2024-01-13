@@ -54,9 +54,6 @@ const element = [
 ];
 
 function Buttons({ handleClick }: IButtonsProps) {
-  useEffect(() => {
-    console.log("rendering!");
-  });
   return (
     <BtnWrapper
       onClick={(e: React.MouseEvent) => {

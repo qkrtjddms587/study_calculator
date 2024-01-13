@@ -35,9 +35,8 @@ const CalWrapper = styled.div`
 
 const operator = ["÷", "×", "+", "-"];
 
-const MemoButtons = React.memo(Buttons);
-
 function Calculator() {
+  const MemoButtons = React.memo(Buttons);
   const [value, setValue] = useState("0");
   const [memory, setMemory] = useState<IMemory[]>([]);
   const [braket, setBraket] = useState("");
