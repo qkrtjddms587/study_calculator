@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { styled } from "styled-components";
 
 interface IButtonsProps {
@@ -54,6 +54,9 @@ const element = [
 ];
 
 function Buttons({ handleClick }: IButtonsProps) {
+  useEffect(() => {
+    console.log("rendering!");
+  });
   return (
     <BtnWrapper
       onClick={(e: React.MouseEvent) => {

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { styled } from "styled-components";
+import { keyframes, styled } from "styled-components";
 import { IMemory } from "../Calculator";
 
 interface IMemoryProps {
@@ -20,7 +20,7 @@ const Wrapper = styled.div<{ $active: boolean }>`
   background-color: ${(props) => (props.$active ? "#EEEEEE" : "white")};
   box-shadow: 5px 5px 1px 1px ${(props) => (props.$active ? "black" : "white")};
   border-radius: 20px;
-  transition: all 1s ease-in-out;
+  transition: all 0.7s ease-in-out;
   width: ${(props) => (props.$active ? "25vw" : "50px")};
   @media screen and (max-width: 500px) {
     width: ${(props) => (props.$active ? "55vw" : "50px")};
@@ -42,12 +42,21 @@ const IconWrapper = styled.div`
     }
   }
 `;
+const openMemoryAnimation = keyframes`
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+`;
 
 const MemoryDisplay = styled.div`
   width: 100%;
   padding: 5px;
   display: flex;
   overflow: scroll;
+  animation: ${openMemoryAnimation} 0.2s ease-in;
 `;
 
 const MemoryItems = styled.div`
@@ -76,7 +85,7 @@ function Memory({ memory, setValue }: IMemoryProps) {
   const toggleCalMemory = () => {
     setOpenMemory((prev) => !prev);
     if (!showMemory) {
-      setTimeout(() => setShowMemory((prev) => !prev), 1000);
+      setTimeout(() => setShowMemory((prev) => !prev), 500);
     } else {
       setShowMemory((prev) => !prev);
     }

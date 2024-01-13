@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import { styled } from "styled-components";
 import Display from "./components/Display";
 import Buttons from "./components/Buttons";
@@ -34,6 +34,8 @@ const CalWrapper = styled.div`
 `;
 
 const operator = ["÷", "×", "+", "-"];
+
+const MemoButtons = React.memo(Buttons);
 
 function Calculator() {
   const [value, setValue] = useState("0");
@@ -126,7 +128,7 @@ function Calculator() {
           isShowAns={isShowAns}
           setValue={setValue}
         />
-        <Buttons handleClick={handleClick} />
+        <MemoButtons handleClick={handleClick} />
       </CalWrapper>
     </Wrapper>
   );
